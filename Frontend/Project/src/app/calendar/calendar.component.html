@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+<div class="row text-center mt-5 w-100">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div class="btn btn-recycling-green" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+        (viewDateChange)="closeOpenMonthViewDay()">
+        Previous
+      </div>
+      <div class="btn btn-recycling-green" mwlCalendarToday [(viewDate)]="viewDate">
+        Today
+      </div>
+      <div class="btn btn-recycling-green " mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+        (viewDateChange)="closeOpenMonthViewDay()">
+        Next
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div class="btn btn-recycling-green" (click)="setView(CalendarView.Month)"
+        [class.active]="view === CalendarView.Month">
+        Month
+      </div>
+      <div class="btn btn-recycling-green" (click)="setView(CalendarView.Week)"
+        [class.active]="view === CalendarView.Week">
+        Week
+      </div>
+      <div class="btn btn-recycling-green " (click)="openModal()">
+        Add Request
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div [ngSwitch]="view" class="mx-5">
+  <mwl-calendar-month-view 
+  *ngSwitchCase="CalendarView.Month" 
+  [viewDate]="viewDate" 
+  [events]="events" >
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view 
+  *ngSwitchCase="CalendarView.Week" 
+  [viewDate]="viewDate" 
+  [events]="events">
+  </mwl-calendar-week-view>
+  <div class='my-legend'>
+    <div class='legend-title'>Request Legend</div>
+    <div class='legend-scale'>
+      <ul class='legend-labels'>
+        <li><span style='background:hsl(219, 100%, 62%);'></span>Pending</li>
+        <li><span style='background:hsl(113, 78%, 64%);'></span>Accepted</li>
+        <li><span style='background:hsl(355, 81%, 60%);'></span>Declined</li>
+      </ul>
+    </div>
+  </div>

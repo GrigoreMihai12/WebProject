@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<div class="bg-request-image d-flex ">
+    <div class="container ">
+        
+        <div *ngIf="requests?.length == 0" class="mt-4 d-flex justify-content-center align-items-center rounded py-3">
+            <span class="font-weight-bold text-white h3">
+                You don't have any pending requests
+            </span>
+    </div>
+
+        <table *ngIf="requests.length > 0" class="table table-bordered mt-4 request-table" >
+            <thead>
+                <tr>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let request of requests">
+                    <td class="text-center">​​​​​​​​​​​{{request.UserEmail}}</td>
+                    <td class="text-center">​​​​​​​​​​​{{request.Date}}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-primary col-4 offset-1"
+                            (click)="AcceptRequest(request.ID)">Accept</button>
+                        <button type="button" class="btn btn-outline-danger col-4 offset-2"
+                            (click)="DeclinedRequest(request.ID)">Decline</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

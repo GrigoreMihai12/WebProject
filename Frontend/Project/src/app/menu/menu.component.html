@@ -1,0 +1,59 @@
+<nav>
+    <div class="nav-logo">
+        <h4>RECYCLE</h4>
+    </div>
+    <ul class="nav-links" (click)="CallExternalJSFileFunction()">
+        <li><a href="#">HOME</a></li>
+        <li><a href="http://localhost:4200/how-to-recycle">HOW TO RECYCLE</a></li>
+        <li>
+            <select name="" id="" class="dropdown meniu-dropdown" value="{{selectedMaterial}}" #materialSelect (change)='GoToSelectedMaterial(materialSelect.value)'>
+                <option value="" style="background-color:rgb(39, 37, 37)">MATERIALS</option>
+                <option value="paper" style="background-color:rgb(39, 37, 37)">Paper</option>
+                <option value="plastic" style="background-color:rgb(39, 37, 37)">Plastic</option>
+                <option value="metal" style="background-color:rgb(39, 37, 37)">Metal</option>
+                <option value="textiles" style="background-color:rgb(39, 37, 37)">Textiles</option>
+            </select>
+        </li>
+        <li>
+            <select name="" id="" class="dropdown meniu-dropdown" value="{{selectedNeighborhood}}" #neighborhoodSelect (change)='GoToSelectedNeighborhood(neighborhoodSelect.value)'>
+                <option value="" style="background-color:rgb(39, 37, 37)">NEIGHBOURHOOD</option>
+                <option value="Andrei Muresanu" style="background-color:rgb(39, 37, 37)">Andrei Muresanu
+                </option>
+                <option value="Becas" style="background-color:rgb(39, 37, 37)">Becas</option>
+                <option value="Borhanci" style="background-color:rgb(39, 37, 37)">Borhaci</option>
+                <option value="Bulgaria" style="background-color:rgb(39, 37, 37)">Bulgaria</option>
+                <option value="Buna Ziua" style="background-color:rgb(39, 37, 37)">Buna Ziua</option>
+                <option value="Centru" style="background-color:rgb(39, 37, 37)">Centru</option>
+                <option value="Dambul Rotund" style="background-color:rgb(39, 37, 37)">Dambul Rotund</option>
+                <option value="Faget" style="background-color:rgb(39, 37, 37)">Faget</option>
+                <option value="Gara" style="background-color:rgb(39, 37, 37)">Gara</option>
+                <option value="Gheorgheni" style="background-color:rgb(39, 37, 37)">Gheorgheni</option>
+                <option value="Gradini Manastur" style="background-color:rgb(39, 37, 37)">Gradini Manastur
+                </option>
+                <option value="Grigorescu" style="background-color:rgb(39, 37, 37)">Grigorescu </option>
+                <option value="Gruia" style="background-color:rgb(39, 37, 37)">Gruia</option>
+                <option value="Iris" style="background-color:rgb(39, 37, 37)">Iris</option>
+                <option value="Intre Lacuri" style="background-color:rgb(39, 37, 37)">Intre Lacuri</option>
+                <option value="Lomb" style="background-color:rgb(39, 37, 37)">Lomb</option>
+                <option value="Manastur" style="background-color:rgb(39, 37, 37)">Manastur </option>
+                <option value="Marasti" style="background-color:rgb(39, 37, 37)">Marasti</option>
+                <option value="Pata-rat" style="background-color:rgb(39, 37, 37)">Pata-Rat</option>
+                <option value="Someseni" style="background-color:rgb(39, 37, 37)">Someseni</option>
+                <option value="Sopor" style="background-color:rgb(39, 37, 37)">Sopor</option>
+                <option value="Tineretului" style="background-color:rgb(39, 37, 37)"> Tineretului</option>
+                <option value="Zorilor" style="background-color:rgb(39, 37, 37)">Zorilor</option>
+            </select>
+        </li>
+    </ul>
+
+    <div>
+        <button *ngIf="!isLogged" type="button" class="btn" id="login" (click)="GoToLogin()">LOGIN</button>
+        <button *ngIf="isLogged" type="button" class="btn mr-2" id="profile" (click)="GoToProfile()">PROFILE</button>
+        <button *ngIf="isLogged" type="button" class="btn" id="login" (click)="Logout()">LOGOUT</button>
+    </div>
+    <div class="burger" (click)="CallExternalJSFileFunction()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+</nav>

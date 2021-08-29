@@ -1,0 +1,55 @@
+<div class="bg-recycle-image d-flex justify-content-center align-items-center">
+    <form [formGroup]="loginForm" class="container px-5">
+        <div class="form-group w-100 row">
+            <div class="col-4 offset-4">
+                <div class="placeholder-icon">
+                    <input type="email" class="form-control pl-4" id="emailAdress" formControlName="Email"
+                        placeholder="   Email" value="">
+                    <img src="../../assets/username-icon.svg" alt="">
+                </div>
+                
+                <div *ngIf="email.invalid && email.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="email.errors.required">
+                        Email is required.
+                      </div>
+                      <div *ngIf="email.errors.email">
+                        Invalid email address.
+                      </div>     
+                </div> 
+            </div>
+        </div>
+        <div class="form-group w-100 row">
+            <div class="col-4 offset-4">
+                <div class="placeholder-icon">
+                    <input type="password" class="form-control pl-4" id="password" formControlName="Password"
+                        placeholder="   Password" value="">
+                    <img src="../../assets/password-icon.svg" alt="">
+                </div>
+                
+                <div *ngIf="password.invalid && password.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="password.errors.required">
+                        Password is required.
+                      </div>
+                      <div *ngIf="password.errors.minlength">
+                        Password must be at least 3 characters long.
+                      </div>  
+                </div> 
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="row col-4 pl-3 pr-4 mr-1">
+                    <button type="submit" class="btn w-100 px-2 rounded-10 " (click)="Login()"
+                        style="background-color:#16df16; border-color:#16df16; color:black">Login</button>
+
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-2">
+            <div class="row col-4 pl-3 pr-4 mr-1">
+                    <button type="submit" class="btn w-100 px-2 rounded-10  " (click)="Register()"
+                        style="background-color:#16df16; border-color:#16df16; color:black">Register</button>
+
+            </div>
+        </div>
+
+    </form>
+</div>

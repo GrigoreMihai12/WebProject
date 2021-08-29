@@ -1,0 +1,177 @@
+<div id="registerPageBackground" class="bg-recycle-image d-flex justify-content-center align-items-center p-5">
+    <form [formGroup]="RegisterUserForm" class="container h-100">
+        <div class="form-group w-100 row my-0">
+            <div class="col-4 offset-4">
+                <label for="name" style="color:white">Name:</label>
+                <input type="text" class="form-control" id="name" formControlName="Name" value="">
+
+                <div *ngIf="name.invalid && name.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="name.errors.required">
+                        Name is required.
+                      </div>
+                      <div *ngIf="name.errors.minlength">
+                        Name must be at least 3 characters long.
+                      </div>
+                      <div *ngIf="name.errors.maxlength">
+                        Name must be maximum 50 characters long.
+                      </div>
+                      <div *ngIf="name.errors.pattern">
+                        Name can only contain letters.
+                      </div>    
+                </div> 
+            </div>
+        </div>
+        <div class="form-group w-100 row my-0">
+            <div class="col-4 offset-4">
+                <label for="address" style="color:white">Address:</label>
+                <input type="text" class="form-control" id="address" formControlName="Address" value="">
+
+                <div *ngIf="address.invalid && address.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="address.errors.required">
+                        Address is required.
+                      </div>
+                      <div *ngIf="address.errors.minlength">
+                        Address must be at least 3 characters long.
+                      </div>
+                      <div *ngIf="address.errors.maxlength">
+                        Address must be maximum 100 characters long.
+                      </div>
+                      <div *ngIf="address.errors.pattern">
+                        This is not a correct pattern for an address.
+                      </div>    
+                </div> 
+            </div>
+        </div>
+        <div class="form-group w-100 row my-0">
+            <div class="col-4 offset-4">
+                <label for="phoneNumber" style="color:white">Phone Number:</label>
+                <input type="phoneNumber" class="form-control" id="phoneNumber" formControlName="PhoneNumber" value="">
+
+                <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="phoneNumber.errors.required">
+                        Phone Number is required.
+                      </div>
+                      <div *ngIf="phoneNumber.errors.minlength">
+                        Phone Number must be at least 3 characters long.
+                      </div>
+                      <div *ngIf="phoneNumber.errors.maxlength">
+                        Phone Number must be maximum 10 characters long.
+                      </div>
+                      <div *ngIf="phoneNumber.errors.pattern">
+                        Name can only contain ciphers.
+                      </div>    
+                </div> 
+            </div>
+        </div>
+        <div class="form-group w-100 row my-0">
+            <div class="col-4 offset-4">
+                <label for="email" style="color:white">Email:</label>
+                <input type="email" class="form-control" id="email" formControlName="Email" value="">
+
+                <div *ngIf="email.invalid && email.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="email.errors.required">
+                        Email is required.
+                      </div>
+                      <div *ngIf="email.errors.email">
+                        Invalid email address.
+                      </div>     
+                </div> 
+            </div>
+        </div>
+        <div class="form-group w-100 row my-0" style="color:white">
+            <div class="col-4 offset-4">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" formControlName="Password" value="">
+
+                <div *ngIf="password.invalid && password.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="password.errors.required">
+                        Password is required.
+                      </div>
+                      <div *ngIf="password.errors.minlength">
+                        Password must be at least 3 characters long.
+                      </div>  
+                </div> 
+            </div>
+        </div>
+        <div class="form-group w-100 row my-0" style="color:white">
+            <div class="col-4 offset-4">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" formControlName="ConfirmPassword" value="">
+
+                <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="confirmPassword.errors.required">
+                        Confirm Password is required.
+                      </div>
+                      <div *ngIf="confirmPassword.errors.minlength">
+                        Confirm Password must be at least 3 characters long.
+                      </div>   
+                      <div *ngIf="confirmPassword.errors.matchPasswords">
+                        Password does not match
+                      </div>   
+                </div> 
+            </div>
+        </div>
+        <div class="form-group w-10 row my-0">
+            <div class="col-4 offset-4">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" class="check-center" (change)="onCheckBoxChange($event) ">
+                    <span class=check-text>  I am a recycling center</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isRecyclingCenter " class="form-group w-100 row my-0 " style="color:white ">
+            <div class="col-4 offset-4 ">
+                <label for="materialTypes ">Accepted Material Types:</label>
+                <div *ngFor="let materialType of materialTypes" class="materials-checkbox-wrapper">
+                    <input type="checkbox" formControlName="MaterialTypes" value="{{materialType.ID}}" [checked]="materialType.Checked" (change)="materialType.Checked = !materialType.Checked"> {{materialType.Name}}
+                </div>
+            </div>
+        </div>
+        <div class="form-group w-100 row" style="color:white">
+            <div class="col-4 offset-4 ">
+                <label for="selectNeighbourhood">Neighbourhood:</label>
+                <select name="selectNeighbourhood" id="" class="neighbourhood-dropdown" formControlName="SelectNeighbourhood">
+                    <option value="" style="background-color:rgb(255, 255, 255)">Neighbourhood</option>
+                    <option value="Andrei Muresanu" style="background-color:rgb(255, 255, 255) ">Andrei Muresanu
+                    </option>
+                    <option value="Becas" style="background-color:rgb(255, 255, 255)">Becas</option>
+                    <option value="Borhanci" style="background-color:rgb(255, 255, 255)">Borhaci</option>
+                    <option value="Bulgaria" style="background-color:rgb(255, 255, 255)">Bulgaria</option>
+                    <option value="Buna Ziua" style="background-color:rgb(255, 255, 255)">Buna Ziua</option>
+                    <option value="Centru" style="background-color:rgb(255, 255, 255)">Centru</option>
+                    <option value="Dambul Rotund" style="background-color:rgb(255, 255, 255)">Dambul Rotund</option>
+                    <option value="Faget" style="background-color:rgb(255, 255, 255)">Faget</option>
+                    <option value="Gara" style="background-color:rgb(255, 255, 255)">Gara</option>
+                    <option value="Gheorgheni" style="background-color:rgb(255, 255, 255)">Gheorgheni</option>
+                    <option value="Gradini Manastur" style="background-color:rgb(255, 255, 255)">Gradini Manastur
+                    </option>
+                    <option value="Grigorescu" style="background-color:rgb(255, 255, 255)">Grigorescu </option>
+                    <option value="Gruia" style="background-color:rgb(255, 255, 255)">Gruia</option>
+                    <option value="Iris" style="background-color:rgb(255, 255, 255)">Iris</option>
+                    <option value="Intre Lacuri" style="background-color:rgb(255, 255, 255)">Intre Lacuri</option>
+                    <option value="Lomb" style="background-color:rgb(255, 255, 255)">Lomb</option>
+                    <option value="Manastur" style="background-color:rgb(255, 255, 255)">Manastur </option>
+                    <option value="Marasti" style="background-color:rgb(255, 255, 255)">Marasti</option>
+                    <option value="Pata-rat" style="background-color:rgb(255, 255, 255)">Pata-Rat</option>
+                    <option value="Someseni" style="background-color:rgb(255, 255, 255)">Someseni</option>
+                    <option value="Sopor" style="background-color:rgb(255, 255, 255)">Sopor</option>
+                    <option value="Tineretului" style="background-color:rgb(255, 255, 255)"> Tineretului</option>
+                    <option value="Zorilor" style="background-color:rgb(255, 255, 255)">Zorilor</option>
+                </select>
+
+                <div *ngIf="selectNeighbourhood.invalid && selectNeighbourhood.touched" class="alert alert-danger mt-2 py-2">
+                    <div *ngIf="selectNeighbourhood.errors.required">
+                        Neighborhood is required.
+                      </div>
+                </div> 
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center ">
+            <div class="col-4 pl-0 d-flex justify-content-between ">
+                <button type="submit " class="btn w-100 px-2 rounded-10 ml-2 mr-2 " (click)="submit() " style="background-color:#16df16; border-color:#16df16; color:black ">Register</button>
+                <button type="button " class="btn w-100 px-2 rounded-10 ml-2 mr-4 " (click)="GoToLogin() " style="background-color:#16df16; border-color:#16df16; color:black ">Cancel</button>
+            </div>
+
+        </div>
+    </form>
+</div>

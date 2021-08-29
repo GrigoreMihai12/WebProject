@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<div class="bg-recycle-image d-flex ">
+    <div class="container">
+        <h3 [innerHTML]="neighborhoodName"></h3>
+        <table class="neighborhood-table" *ngIf="usersByNeighBourhood.length > 0">
+            <thead>
+                <tr>
+                    <th class="text-center">Recycle Center</th>
+                    <th class="text-center">Recycled Materials</th>
+                    <th class="text-center">Adress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of usersByNeighBourhood">
+                    <td>{{user.Name}}</td>
+                    <td>{{user.RecycledMaterials}}</td>
+                    <td>
+                        <div>
+                            <button (click)="getGeoLocation(user.Name)">{{user.Address}}</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="usersByNeighBourhood?.length == 0"
+            class="mt-4 d-flex justify-content-center align-items-center rounded py-3">
+            <span class="font-weight-bold h2">
+                This neighborhood doesn't have any recycle centers registered
+            </span>
+        </div>
+        <div class="mt-5">
+            <div id="googleMapsDiv" style="height: 300px;"></div>
+        </div>
+
+    </div>
+</div>

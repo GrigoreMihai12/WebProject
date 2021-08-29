@@ -1,0 +1,75 @@
+h3 {
+  margin: 0 0 10px;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 15px;
+}
+.btn-recycling-green {
+  background-color: #16df16;;
+  color: white;
+}
+
+  .btn-recycling-green:hover {
+      color: #16df16;;
+      border-color: #16df16;;
+      background-color: white;
+  }
+
+::ng-deep .cal-day-badge{
+  visibility:hidden !important;
+}
+::ng-deep .cal-cell{
+  max-height: 80px !important;
+}
+::ng-deep .cal-month-view .cal-cell-top {
+  min-height:65px !important;
+}
+legend {
+  background-color: #16df16;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+.output {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+  margin: .4rem;
+}
+
+  .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 100%;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    font-size: 100%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 37px;
+    margin-bottom: 2px;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 36px;
+    width: 49px;
+    margin-right: 10px;
+    margin-left: 0;
+    border: 1px solid rgb(255, 255, 255);
+    }
+    .my-legend {
+      max-width: 300px !important;
+      }
+

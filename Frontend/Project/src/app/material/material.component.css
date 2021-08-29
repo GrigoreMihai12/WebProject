@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: audery;
+}
+.title{
+    text-transform: uppercase;
+    font-family: audery;
+}
+section{
+    background-color: rgb(158, 224, 145) ;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+}
+h1{
+    font-size: 2.5em;
+    color:rgb(39, 37, 37);
+    text-align: center;
+    font-weight: 400;
+}
+.material-types{
+    height: 100%;
+    margin-top:50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   
+}
+
+.material-type1{
+    width:320px;
+    background-color: white;
+    padding: 15px;
+    margin: 35px;
+    border-radius: 10px;
+}
+.img{
+    padding-top:30px;
+}
+img{
+    height: 170px;
+    width:100%;
+}
+.description{
+    padding-bottom: 30px;
+    text-align: center;
+    margin-top:30px;
+}
+h2{
+    text-transform: uppercase;
+    color:rgb(22, 223, 22);
+    font-family: audery;
+}
+p{
+    margin-top: 20px;
+    color: rgb(39, 37, 37);
+}
+.shapes{
+    position: relative;
+}
+.shape-1,
+.shape-2,
+.shape-3,
+.shape-4,
+.shape-5,
+.shape-6
+{
+    width: 20px;
+    height: 40px;
+    border-radius: 35px;
+    position: absolute;
+}
+.right{
+    right:0;
+}
+.shape-1{
+    right:40px;
+    background-color: rgb(158, 224, 145);
+    top:-60px;
+    transition: all linear .5s;
+}
+.shape-2{
+    right:20px;
+    background-color: white;
+    top:-10px;
+    transition: all linear .5s;
+}
+.shape-3{
+    background-color:rgb(158, 224, 145);
+    top:-60px;
+    transition: all linear .5s;
+}
+
+.material-type1:hover .shape-1{
+    top:-30px;
+}
+.material-type1:hover .shape-2{
+    top:-30px;
+}
+.material-type1:hover .shape-3{
+    top:-40px;
+}
+.shape-4{
+    background-color: white;
+    top:-27px;
+    transition: all linear .5s;
+}
+.shape-5{
+    background-color: rgb(158, 224, 145);
+    left:20px;
+    top:17px;
+    transition: all linear .5s;
+}
+.shape-6{
+    background-color: white;
+    left:40px;
+    top:-27px;
+    transition: all linear .5s;
+}
+.material-type1:hover .shape-4{
+    top:-7px;
+}
+.material-type1:hover .shape-5{
+    top:0;
+}
+.material-type1:hover .shape-6{
+    top:-15px;
+}
+/*tooltip*/
+.avatar{
+    position: relative;
+}
+.avatar::before,
+.avatar::after{
+    position: absolute;
+    top: -0.5rem;
+    transform: translateX(-100%) translateY(-30%);
+    transition: 150ms transform;
+    left:220%;
+    color:rgb(39, 37, 37);
+}
+.avatar:hover::before{
+    content:attr(data-tooltip);
+    height: 50px;
+    width: 50px;
+    background: white;
+    padding: .5rem;
+    width: max-content;
+    height: max-content;
+    width:100%;
+    border-radius: .3rem;
+    text-align: center;
+    font-family: audery;
+    white-space: pre-line;
+}
+
+@media screen and (max-width:768px){
+    
+    .shape-1,
+    .shape-2,
+    .shape-3,
+    .shape-4,
+    .shape-5,
+    .shape-6{
+        display: none;
+    }
+    .avatar{
+        display: none;
+    }
+
+}

@@ -1,0 +1,63 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.bg-request-image{
+  
+    height: 100vh;
+    background-image:linear-gradient(rgba(161, 161, 161, 0.514),rgba(161,161,161,0.514)), url(request.jpeg);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .btn{
+    padding: 10px 20px;
+    border: 0;
+    background: rgb(22, 223, 22);
+    font-weight: bold;
+    cursor: pointer;
+    float:left;
+}
+.banner-title{
+    margin: 80px 130px;
+    color: #fff;
+}
+.banner-title h1{
+    font-size: 64px;
+    margin-bottom: 30px;
+}
+.banner-title h1 span{
+    color: rgb(22, 223, 22);
+}
+
+.request-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: 'Poppins', sans-serif;
+    min-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.request-table thead tr {
+    background-color: #009877;
+    color: #ffffff;
+    text-align: center;
+}
+
+.request-table th,
+.request-table td {
+    padding: 12px 15px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.request-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.request-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

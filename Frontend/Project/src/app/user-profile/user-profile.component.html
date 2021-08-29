@@ -1,0 +1,43 @@
+<body>
+    <div class="background-image">
+        <div class="container">
+            <form [formGroup]="updateProfileForm">
+                <div class="profile-container">
+                    <div class="avatar-flip">
+                        <img src="https://thumbs.dreamstime.com/b/user-avatar-icon-button-profile-symbol-flat-person-icon-vector-user-avatar-icon-button-profile-
+                                    symbol-flat-person-icon-%C3%A2%E2%82%AC-stock-131363829.jpg" height="150" width="150">
+                        <img src="https://media1.giphy.com/media/J1cxfnOGTvrsi7tufP/giphy.gif?cid=ecf05e470d8cm64tzdocpic0c7g2ixht86c8635kmg4educ3&rid=giphy.gif" height="150" width="150">
+                    </div>
+                    <div class="info-wrapper" ng-switch="edit">
+                        <h3 *ngIf="!isEditting">{{ userProfile.Name }}</h3>
+                        <p *ngIf="!isEditting">{{ userProfile.Email }}</p>
+                        <p *ngIf="!isEditting">{{userProfile.PhoneNumber}}</p>
+                        <p *ngIf="!isEditting">{{userProfile.Address}}</p>
+                        <h3 *ngIf="isEditting">
+                            <textarea rows="2" cols="25" formControlName="Name"></textarea>
+                        </h3>
+                        <p *ngIf="isEditting ">
+                            {{ userProfile.Email }}
+                        </p>
+                        <p *ngIf="isEditting ">
+                            <textarea rows="2" cols="45" formControlName="PhoneNumber"></textarea>
+                        </p>
+                        <p *ngIf="isEditting ">
+                            <textarea rows="2" cols="45" formControlName="Address"></textarea>
+                        </p>
+                    </div>
+                </div>
+                <div class="button-container " ng-switch="edit ">
+                    <span>
+                        <button *ngIf="!isEditting" class="go-to-home-button " (click)=goToHome()>Home</button>
+                        <button *ngIf="isEditting" class ="cancel-edit-button" (click)=cancelEdit()>Cancel</button>
+                    </span>
+                    <span>
+                        <button *ngIf="!isEditting" class="update-button " (click)="setEditProfile()">Update Profile</button>
+                        <button type="submit" *ngIf="isEditting"class = "save-edit-button" (click)=saveEdit()>Save</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

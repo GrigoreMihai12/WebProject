@@ -1,0 +1,10 @@
+<div class="tweet-window-container">
+    <button *ngIf="!opened" type="button" (click)="openClose(true)" class="open-button"><img src="../../assets/Twitter-Logo.png" width="70px" height="50px">Recycling Tweets</button>
+    <div class="tweets-container" *ngIf="opened">
+        <h4><button class="close-button" (click)="openClose(false)"><img src="../../assets/Twitter-Logo.png" width="70px" height="50px">Check out the latest tweets</button></h4>
+        <div class="tweet-show-container">
+            <div class="twitter-tweet" id="tweet">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Recycling application</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="home.component.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <div class="hero">
+        <app-menu></app-menu>
+        <div class="banner-title">
+            <h1>DO<span> something <br> green </span>TODAY</h1>
+            <button *ngIf="!isGuestUser" type="button" class="btn"  (click)="GoToAbout()">ABOUT</button>
+            <button *ngIf="isRecyclingUser" type="button" class="btn" (click)="GoToCalendar()">Recycle</button>
+            <button *ngIf="isRecyclingCenter" type="button" class="btn" (click)="GoToRequests()">Recycling Requests</button>
+            <app-tweet></app-tweet>
+        </div>
+
+    </div>
+</body>
+
+</html>

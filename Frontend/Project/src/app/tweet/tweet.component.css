@@ -1,0 +1,87 @@
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+ ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 40px;
+    box-shadow: rgb(39, 37, 37);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+}
+
+* {
+    font-style: sans-serif;
+}
+
+.open-button {
+    background-color: rgb(39, 37, 37);
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+    border-radius: 10px;
+}
+
+.tweet-window-container {
+    display: block;
+    width: 600px;
+    height: 500px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    overflow: hidden;
+}
+
+.twitter-tweet {
+    height: 400px;
+    overflow-y: auto;
+    bottom: 15px;
+}
+
+.tweets-container {
+    display: block;
+    width: 600px;
+    height: 500px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border: 3px solid rgb(39, 37, 37);
+    z-index: 9;
+    border-radius: 20px 20px 20px 20px;
+    opacity: 0.9;
+}
+
+.tweets-container {
+    padding: 10px;
+    background-color: rgb(39, 37, 37);
+}
+
+.tweet-show-container:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.close-button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: white;
+}
+
+.close-button:hover,
+.open-button:hover {
+    opacity: 1;
+}

@@ -1,0 +1,124 @@
+<app-menu ></app-menu>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="uTF-8">
+        <meta name="viewport" content="width=device-whdth, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="material.component.css">
+        <title>Material types</title>
+    </head>
+    <body>
+            <section>
+                <h1 class="title">Material types</h1>
+                <div *ngIf="typeMaterial==null || typeMaterial=='plastic'" class="material-types">
+                    <div class="material-type1" >
+                        <div class="shapes">
+                            
+                            <div class="shape-1 right"></div>
+                            <div class="shape-2 right"></div>
+                            <div class="shape-3 right"></div>
+                        </div>
+                        <div class="avatar" data-tooltip="PLASTIC WASTE INCLUDES: &#013; plastic bottles and cups &#013; lunch boxes &#013; take-out food and ice-cream containers &#013; garbage and plastic bags">
+                        <div class="img" >
+                            <img src="../../assets/plastic.jpeg" alt="">
+                        </div>
+                        </div>
+                        <div class="description" >
+                            <h2>PLASTIC</h2>
+                            <p>Plastic is one of the most popular and useful materials of modern times: we now use about 20 times more plastic than we did 50 years ago. 
+                                Its popularity and widespread use is why handling it responsibly and correctly once it becomes waste is so vitally important. We can optimise the lifespan 
+                                of plastics by re-using and recycling items as many times as possible.</p>
+                        </div>
+                        <div class="shapes">
+                            <div class="shape-5"></div>
+                            <div class="shape-6"></div>
+                            <div class="shape-7"></div>
+                        </div>
+                        </div>
+                </div>
+
+                <div *ngIf="typeMaterial==null || typeMaterial=='metal'" class="material-types">
+                    <div class="material-type1">
+                        <div class="shapes">
+                          
+                            <div class="shape-1 right"></div>
+                            <div class="shape-2 right"></div>
+                            <div class="shape-3 right"></div>
+                        </div>
+                        <div class="avatar" data-tooltip="METAL WASTE INCLUDES: &#013; steel &#013; aluminium &#013; copper &#013; silver &#013; gold">
+                        <div class="img">
+                            <img src="../../assets/metal.jpeg" alt="">
+                        </div>
+                        </div>
+                        <div class="description">
+                            <h2>METAL</h2>
+                            <p>Metals are essential, versatile and can be used in a number of ways. Metals can be used for industrial purposes such as the manufacture of trucks, cars, 
+                                airplanes, ships, and railways. They can also be used to manufacture domestic items such as cutlery, crockery and even in packaging. The good thing about metal 
+                                recycling is that metal can be recycled over and over without altering its properties.</p>
+                        </div>
+                        <div class="shapes">
+                            <div class="shape-5"></div>
+                            <div class="shape-6"></div>
+                            <div class="shape-7"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="typeMaterial==null || typeMaterial=='paper'" class="material-types">
+                    <div class="material-type1">
+                        <div class="shapes">
+                            
+                            <div class="shape-1 right"></div>
+                            <div class="shape-2 right"></div>
+                            <div class="shape-3 right"></div>
+                        </div>
+                        <div class="avatar" data-tooltip="PAPER WASTE INCLUDES: &#013; white and coloured paper &#013; envelopes and booklets &#013; manuals and receipts &#013; soft-covered books &#013; post-it notes and flyers &#013; magazines and newspapers">
+                        <div class="img">
+                            <img src="../../assets/paper.jpeg" alt="">
+                        </div>
+                        </div>
+                        <div class="description">
+                            <h2>PAPER</h2>
+                            <p>You’d be more shocked than surprised if you heard someone didn’t know about paper. Well, that’s to show you the big role paper play in our everyday activities. 
+                                From magazines to personal diaries, we can’t just seem to get enough them.
+                                Unfortunately, nothing lasts forever. And you’ll most likely dispose of these materials once you finish reading. Well, you don’t need to anymore. 
+                                You can always recycle them and gain loads of benefits.</p>
+                        </div>
+                        <div class="shapes">
+                            <div class="shape-5"></div>
+                            <div class="shape-6"></div>
+                            <div class="shape-7"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="typeMaterial==null || typeMaterial=='textiles'" class="material-types">
+                    <div class="material-type1">
+                        <div class="shapes">
+                           
+                            <div class="shape-1 right"></div>
+                            <div class="shape-2 right"></div>
+                            <div class="shape-3 right"></div>
+                        </div>
+                        <div class="avatar" data-tooltip="TEXTILE WASTE INCLUDES: &#013; clothes, shoes and bags &#013; duvets and bedsheets &#013; cushions and pillows &#013; curtains &#013; table cloths and towels">
+                        <div class="img">
+                            <img src="../../assets/fabric.jpg" alt="">
+                        </div>
+                        </div>
+                        <div class="description">
+                            <h2>TEXTILES</h2>
+                            <p>Textile and clothing recycling is a potentially beneficial activity from environmental, social and economic points of view, as opposed to landfilling 
+                                or being used for energy. As cities increasingly divert other high-volume waste streams such as organics, the recycling of old clothes has been called the 
+                                next frontier for cities looking to reduce solid waste.</p>
+                        </div>
+                        <div class="shapes">
+                            <div class="shape-5"></div>
+                            <div class="shape-6"></div>
+                            <div class="shape-7"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </body>
+</html>
